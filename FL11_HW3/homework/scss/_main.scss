@@ -1,0 +1,204 @@
+$fontWeight: ("regular": 400, "medium": 500, "bold": 700);
+
+@mixin container($width) {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  max-width: $width;
+  width: 100%;
+}
+
+header {
+  height: 750px;
+  background-image: $headerBackground;
+  background-repeat: no-repeat;
+  background-position: -70px -150px;
+  border-radius: 0 0 50% 0;
+  font-family: $firstFont;
+}
+
+.header-wrap {
+  padding: 10px 30px;
+}
+
+.landing-logo {
+  text-align: left;
+  display: flex;
+  width: 135px;
+    p{
+      font-size: 25px;
+      margin: 0px;
+      width: 75px;
+      text-align: center;
+      font-weight: map-get($fontWeight, "bold");
+      padding-top: 5px;
+			  span {
+			  	font-size: 10px;
+				  font-weight: map-get($fontWeight, "regular");
+				  display: block;
+			}
+    }
+}
+
+.landing-logo > img {
+  padding: 5px;
+}
+
+.header_heading {
+  font-size: 65px;
+  color: #3c424c;
+  width: 500px;
+  padding-left: 10px;
+  font-weight: map-get($fontWeight, "bold");
+}
+
+.header_heading::after {
+  content: '';
+  color: transparent;
+  background-color: $underline;
+  display: block;
+  height: 20px;
+  width: 280px;
+  margin-top: -30px;
+}
+
+.header_text {
+  line-height: 27px;
+  color: #3c424c;
+  font-size: 20px;
+  width: 650px;
+  padding-left: 10px;
+}
+
+.header_button,
+.section_banner_button {
+  background-color: $button;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  margin: 10px;
+  font-size: 10px;
+  padding: 5px 10px;
+  width: 120px;
+	height: 40px;
+}
+
+
+.section_text {
+  display: flex;
+  justify-content: center;
+  font-family: $secondFont;
+  font-weight: map-get($fontWeight, "bold");
+  font-size: 50px;
+}
+
+.section_text::after {
+  content: '';
+  color: transparent;
+  background-color: $underline;
+  display: block;
+  height: 10px;
+  width: 240px;
+  position: absolute;
+  z-index: -1;
+  margin: 45px 0 0 140px;
+}
+
+.section_card_wrap {
+  display: flex;
+  justify-content: space-around;
+}
+
+.section_card {
+  width: 350px;
+  flex-basis: 32%;
+  text-align: center;
+  border-radius: 7px;
+  background-color: #21222e;
+  color: #fff;
+
+  img {
+    width: 90%;
+    height: auto;
+    border-radius: 7px;
+    margin-top: 20px;
+  }
+}
+
+.section_card_heading {
+  font-size: 20px;
+  font-weight: map-get($fontWeight, "bold");
+  font-family: $secondFont;
+}
+
+.section_card_underline {
+  height: 13px;
+  display: block;
+  width: 150px;
+  background-color: $underline;
+  margin-left: 150px;
+  margin-top: -15px;
+}
+
+.section_card_text {
+  padding-left: 20px;
+  width: 400px;
+}
+
+.section_banner {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  padding: 0 50px;
+  margin: 0 auto;
+  margin-top: 15px;
+  border-radius: 7px;
+  background: $gradientBanner;
+}
+
+.section_banner_heading {
+  font-family: $secondFont;
+  color: #222530;
+  font-weight: map-get($fontWeight, "bold");
+}
+
+.section_banner_heading::after {
+  content: '';
+  color: transparent;
+  background-color: $underline;
+  display: block;
+  height: 10px;
+  width: 35px;
+  margin: -13px 0 0 65px;
+}
+
+.section_banner_button {
+  margin-top: 25px;
+}
+
+.footer {
+  width: 100%;
+  margin-top: -50px;
+  padding-top: 170px;
+  background: #2c2f3c;
+  position: absolute;
+  z-index: -1;
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-around;
+  color: #fff;
+  align-items: center;
+}
+
+.footer_logo {
+  @extend .landing-logo;
+  margin-bottom: 0;
+}
+
+.footer_text {
+  width: 400px;
+  font-size: 15px;
+  line-height: 20px;
+}
